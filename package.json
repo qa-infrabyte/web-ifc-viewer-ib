@@ -1,24 +1,18 @@
 {
-  "name": "web-ifc-viewer-root",
-  "description": "IFC viewer",
+  "name": "web-ifc-viewer",
   "version": "1.0.218",
-  "private": true,
+  "description": "IFC viewer",
+  "main": "dist/index.js",
   "type": "module",
-  "main": "viewer/src/ifc-viewer-api.ts",
-  "author": "agviegas",
-  "license": "MIT",
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ifcjs/web-ifc-viewer.git"
-  },
-  "scripts": {
-    "init-repo": "yarn && npm run build",
-    "start": "cd example && yarn start",
-    "build": "cd viewer && npm run build && cd ../example && npm run build",
-    "publish-repo": "cd viewer && yarn build && npm publish"
-  },
-  "bugs": {
-    "url": "https://github.com/agviegas/web-ifc-viewer/issues"
   },
   "keywords": [
     "ifc",
@@ -27,8 +21,45 @@
     "bim",
     "3d"
   ],
-  "workspaces": [
-    "viewer",
-    "example"
-  ]
+  "author": "agviegas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ifcjs/web-ifc-viewer/issues"
+  },
+  "homepage": "https://github.com/ifcjs/web-ifc-viewer",
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "path": false
+  },
+  "dependencies": {
+    "camera-controls": "^2.7.2",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.12.2",
+    "three-mesh-bvh": "^0.6.7",
+    "web-ifc": "^0.0.43",
+    "web-ifc-three": "github:sebstryczek/web-ifc-three#0.0.43-release"
+  },
+  "devDependencies": {
+    "@types/dat.gui": "^0.7.10",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.6.2",
+    "@types/three": "^0.156.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "cpy-cli": "^5.0.0",
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "three": "^0.156.0"
+  }
 }
