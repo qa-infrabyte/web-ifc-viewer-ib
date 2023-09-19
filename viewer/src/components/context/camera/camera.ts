@@ -176,6 +176,7 @@ export class IfcCamera extends IfcComponent {
 
   async targetItem(mesh: Mesh) {
     const center = this.context.getCenter(mesh);
+    console.log("targetItem")
     await this.cameraControls.moveTo(center.x, center.y, center.z, true);
   }
 
@@ -226,9 +227,10 @@ export class IfcCamera extends IfcComponent {
   }
 
   private setupControls() {
-    this.cameraControls.dampingFactor = 0.2;
+    console.log("setupControls");
+    this.cameraControls.smoothTime = 0.2;
     this.cameraControls.dollyToCursor = true;
-    this.cameraControls.infinityDolly = true;
+    this.cameraControls.infinityDolly = false;
     this.cameraControls.setTarget(0, 0, 0);
 
     this.cameraControls.addEventListener('controlend', () => this.onChange.trigger(this));

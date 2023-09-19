@@ -1,4 +1,4 @@
-import { Pass, FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass';
+import { Pass, FullScreenQuad } from 'three/examples/jsm/postprocessing/Pass.js';
 import {
   Color,
   MeshNormalMaterial,

@@ -6,29 +6,29 @@
   "description": "A basic html example for web-ifc-viewer",
   "main": "main.js",
   "scripts": {
-    "build": "rollup -c && npm run copy-wasm && npm run copy-wasm-mt && npm run copy-worker",
+    "build": "rm -rf ./files && mkdir ./files && npm run copy-wasm && npm run copy-wasm-mt && npm run copy-worker && rollup -c",
     "watch": "rollup -c -w",
-    "copy-wasm": "cpy ../node_modules/web-ifc/web-ifc.wasm files/",
-    "copy-wasm-mt": "cpy ../node_modules/web-ifc/web-ifc-mt.wasm files/",
-    "copy-worker": "cpy ../node_modules/web-ifc-three/IFCWorker.js files/",
+    "copy-wasm": "cp ../node_modules/web-ifc/web-ifc.wasm ./files/",
+    "copy-wasm-mt": "cp ../node_modules/web-ifc/web-ifc-mt.wasm ./files/",
+    "copy-worker": "cp ../node_modules/web-ifc-three/IFCWorker.js ./files/",
     "start": "serve"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^19.0.0",
-    "@rollup/plugin-node-resolve": "^13.0.0",
-    "@types/three": "^0.134.0",
-    "rollup": "^2.47.0",
-    "serve": "^11.3.2"
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/three": "^0.156.0",
+    "rollup": "^3.29.2",
+    "serve": "^14.2.1"
   },
   "dependencies": {
-    "dxf-writer": "^1.15.1",
-    "jspdf": "^2.4.0",
+    "dxf-writer": "^1.18.4",
+    "jspdf": "^2.5.1",
     "stats.js": "0.17.0",
-    "three": "0.135",
-    "three-mesh-bvh": "^0.5.11",
-    "web-ifc": "^0.0.39",
-    "web-ifc-viewer": "1.0.218"
+    "three": "0.156.0",
+    "three-mesh-bvh": "^0.6.7",
+    "web-ifc": "^0.0.43",
+    "web-ifc-three": "github:sebstryczek/web-ifc-three#0.0.43-release"
   }
 }

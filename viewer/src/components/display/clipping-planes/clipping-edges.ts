@@ -1,6 +1,6 @@
-import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry';
-import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2';
-import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial';
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js';
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 import {
   BufferAttribute,
   BufferGeometry,

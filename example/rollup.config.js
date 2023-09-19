@@ -7,6 +7,9 @@ export default {
     file: "build/main.js",
     format: 'iife',
     inlineDynamicImports: true, //Necessary for jspdf
+    globals: {
+      'web-ifc-three/IFCLoader':'IFCLoader'
+    }
   },
   plugins: [ nodeResolve(), commonjs() ]
 };

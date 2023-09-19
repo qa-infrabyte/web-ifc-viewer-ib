@@ -1,5 +1,5 @@
 import { Camera, Vector2, WebGLRenderer } from 'three';
-import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer';
+import { CSS2DRenderer } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 import { IfcComponent } from '../../../base-types';
 import { Postproduction } from './postproduction';
 import { IfcContext } from '../context';

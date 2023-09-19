@@ -29,7 +29,7 @@ export interface NavigationMode {
   enabled: boolean;
   onChange: LiteEvent<any>;
   onChangeProjection: LiteEvent<Camera>;
-  fitModelToFrame : any
+  fitModelToFrame: any
 }
 
 export interface NavModeManager {
@@ -61,7 +61,7 @@ export abstract class IfcComponent implements Component {
     context.addComponent(this);
   }
 
-  update(_delta: number) {}
+  update(_delta: number) { }
 }
 
 export interface fpsControl {

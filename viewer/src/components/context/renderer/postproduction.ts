@@ -1,4 +1,4 @@
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import {
   Camera,
   Color,
@@ -11,10 +11,10 @@ import {
   WebGLRenderer,
   WebGLRenderTarget
 } from 'three';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass';
-import { SAOPass } from 'three/examples/jsm/postprocessing/SAOPass';
-import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { SAOPass } from 'three/examples/jsm/postprocessing/SAOPass.js';
+import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { IfcContext } from '../context';
 import { CustomOutlinePass } from './custom-outline-pass';
 
@@ -199,8 +199,8 @@ export class Postproduction {
     this.setupEvents();
 
     this.addBasePass(scene, camera);
-    this.addSaoPass(scene, camera);
-    this.addOutlinePass(scene, camera);
+    // this.addSaoPass(scene, camera);
+    // this.addOutlinePass(scene, camera);
     this.addAntialiasPass();
     this.setupHtmlOverlay();
 
@@ -310,7 +310,7 @@ export class Postproduction {
   }
 
   private addSaoPass(scene: Scene, camera: PerspectiveCamera) {
-    this.saoPass = new SAOPass(scene, camera, false, true);
+    this.saoPass = new SAOPass(scene, camera);
     this.composer.addPass(this.saoPass);
 
     this.saoPass.enabled = true;

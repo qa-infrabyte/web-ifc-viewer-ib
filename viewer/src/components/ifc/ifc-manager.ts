@@ -78,7 +78,7 @@ export class IfcManager extends IfcComponent {
         USE_FAST_BOOLS: fastBools
       });
 
-      const ifcModel = await this.loader.loadAsync(url, onProgress);
+      const ifcModel = await this.loader.loadAsync(url, onProgress) as IFCModel; // TODO: typing should be fixed in web-ifc-three
       this.addIfcModel(ifcModel);
 
       if (firstModel && coordsToOrigin) {

@@ -1,4 +1,4 @@
-import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import {
   BufferAttribute,
   BufferGeometry,
@@ -10,7 +10,7 @@ import {
   MeshStandardMaterial
 } from 'three';
 import { IFCModel } from 'web-ifc-three/IFC/components/IFCModel';
-import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter';
+import { GLTFExporter } from 'three/examples/jsm/exporters/GLTFExporter.js';
 import { IFCLoader } from 'web-ifc-three/IFCLoader';
 import { IFCPROJECT } from 'web-ifc';
 import { IFCManager } from 'web-ifc-three/IFC/components/IFCManager';
@@ -135,7 +135,7 @@ export class GLTFManager extends IfcComponent {
 
     const model = await loader.loadAsync(ifcFileUrl, (event) => {
       if (onProgress) onProgress(event.loaded, event.total, 'IFC');
-    });
+    }) as IFCModel; // TODO: typing should be fixed in web-ifc-three
 
     const result: ExportResponse = {
       gltf: {},
@@ -367,8 +367,8 @@ export class GLTFManager extends IfcComponent {
    * @mesh The mesh to export.
    */
   exportMeshToGltf(mesh: Mesh) {
-    return new Promise<any>((resolve) => {
-      this.exporter.parse(mesh, (result: any) => resolve(result), this.options);
+    return new Promise<any>((resolve, reject) => {
+      this.exporter.parse(mesh, (result: any) => resolve(result), (error: ErrorEvent) => reject(error), this.options);
     });
   }
 
@@ -550,7 +550,7 @@ export class GLTFManager extends IfcComponent {
       meshes.length <= 1
         ? false
         : meshes[0].geometry.attributes.position.array !==
-          meshes[1].geometry.attributes.position.array;
+        meshes[1].geometry.attributes.position.array;
     const geometry = new BufferGeometry();
     if (parseDraco) {
       this.setupGeometryAttributesDraco(geometry, meshes);

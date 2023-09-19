@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { LineSegments, Mesh, Scene } from 'three';
-import { mergeBufferGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils';
+import { mergeBufferGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { MeshBVH } from 'three-mesh-bvh';
 import { IfcContext } from '../../context';
 import {
@@ -31,7 +31,7 @@ export class EdgeProjector {
 
   projectedEdges: LineSegments[] = [];
 
-  constructor(private context: IfcContext) {}
+  constructor(private context: IfcContext) { }
 
   dispose() {
     this.projectedEdges.forEach((edge) => {

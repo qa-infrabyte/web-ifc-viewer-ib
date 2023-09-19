@@ -8,7 +8,7 @@ import {
   PlaneGeometry,
   Vector3
 } from 'three';
-import { TransformControls } from 'three/examples/jsm/controls/TransformControls';
+import { TransformControls } from 'three/examples/jsm/controls/TransformControls.js';
 import { IfcComponent } from '../../../base-types';
 import { ClippingEdges } from './clipping-edges';
 import { IfcContext } from '../../context';

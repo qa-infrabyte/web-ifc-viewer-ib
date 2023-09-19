@@ -9,7 +9,7 @@ import {
   MeshBasicMaterial,
   Vector3
 } from 'three';
-import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer';
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js';
 import { IfcContext } from '../../context';
 import { disposeMeshRecursively } from '../../../utils/ThreeUtils';
 import { CameraProjections } from '../../../base-types';
