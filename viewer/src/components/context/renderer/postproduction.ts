@@ -199,8 +199,8 @@ export class Postproduction {
     this.setupEvents();
 
     this.addBasePass(scene, camera);
-    // this.addSaoPass(scene, camera);
-    // this.addOutlinePass(scene, camera);
+    this.addSaoPass(scene, camera);
+    this.addOutlinePass(scene, camera);
     this.addAntialiasPass();
     this.setupHtmlOverlay();
 
