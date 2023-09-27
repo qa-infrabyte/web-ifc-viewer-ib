@@ -8,6 +8,6 @@
 # Exposing build for npm
 ### Hacky way
 1. Create a branch
-2. `npm run publish-to-branch`
+2. `npm run prepare-to-publish`
 3. `push` the branch.
 Now you can install the package using `npm i github:USERNAME/web-ifc-viewer#BRANCH_NAME`.
