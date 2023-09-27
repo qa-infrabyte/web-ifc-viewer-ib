@@ -256,6 +256,7 @@ export class IfcManager extends IfcComponent {
     this.context.items.ifcModels.push(ifcMesh);
     this.context.items.pickableIfcModels.push(ifcMesh);
     this.context.getScene().add(ifcMesh);
+    this.context.renderer.postProduction.update();
   }
 
   private setupThreeMeshBVH() {
